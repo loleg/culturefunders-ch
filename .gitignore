@@ -1,2 +1,6 @@
 # Ignore output of scraper
 data.sqlite
+__pycache__
+env
+600*
+*.csv
