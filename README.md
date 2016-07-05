@@ -1,1 +1,6 @@
-This is a scraper that runs on [Morph](https://morph.io). To get started [see the documentation](https://morph.io/documentation)
+```
+pip install -r requirements.txt
+scrapy crawl culturalpromotionch
+```
+
+Visit http://scrapy.org/doc/ for info.

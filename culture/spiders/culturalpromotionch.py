@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*-
 import scrapy
 
-from items import CultureFunder
+from ..items import CultureFunder
 
-class CultureSpider(scrapy.Spider):
-    name = 'culturespider'
+class CulturalpromotionchSpider(scrapy.Spider):
+    name = 'culturalpromotionch'
     allowed_domains = ['kulturförderung.ch', 'xn--kulturfrderung-1pb.ch']
     start_urls = ['http://kulturförderung.ch/en/search/?q=&select_area=new-media']
     # start_urls = ['http://kulturförderung.ch/en/address/600/']
@@ -31,5 +32,5 @@ class CultureSpider(scrapy.Spider):
         cf['application'] = response.css('article > section:nth-child(2) > p:nth-child(7)::text').extract_first()
         if cf['application'] is not None: cf['application'] = cf['application'].strip().replace('Applications: ', '')
         cf['website'] = response.css('article > section:nth-child(3) > p:nth-child(2) > a:nth-child(2)::text').extract_first()
-        cf['url'] = response.url
+        cf['dataurl'] = response.url
         return cf
